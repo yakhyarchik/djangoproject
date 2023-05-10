@@ -1,4 +1,49 @@
+from django.contrib.auth.models import User
 from django.db import models
+
+
+class Human(models.Model):
+    name = models.CharField(max_length=10)
+
+
+class Child(models.Model):
+    name = models.CharField(max_length=10)
+
+
+class IceCream(models.Model):
+    name = models.CharField(
+        max_length=5,
+        verbose_name='Вид',
+    )
+
+
+class IceCreamMarket(models.Model):
+    name = models.CharField(
+        max_length=20,
+        verbose_name='Название'
+    )
+
+    ice_cream = models.ManyToManyField(IceCream)
+
+
+class AdvUser(models.Model):
+    is_activated = models.BooleanField(
+        default=True,
+    )
+
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE
+    )
+
+
+class Spare(models.Model):
+    name = models.CharField(max_length=30)
+
+
+class Machine(models.Model):
+    name = models.CharField(max_length=30)
+    spares = models.ManyToManyField(Spare)
 
 
 class Rubric(models.Model):
