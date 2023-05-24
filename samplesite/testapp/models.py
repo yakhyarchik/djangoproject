@@ -11,7 +11,8 @@ class AdvUser(models.Model):
         User,
         on_delete=models.CASCADE
     )
-
+# from django.contrib.auth.models import User
+# from testapp.models import AdvUser
 
 class Spare(models.Model):
     name = models.CharField(max_length=30)
