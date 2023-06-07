@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&yv3$%fysq0t0u(n7wtt7xtzts-33ym_6d_9)&6f*3ih3vi3vx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.2.3.4', '127.7.8.9', '127.10.11.12', '127.127.127.127']
+ALLOWED_HOSTS = ['127.2.3.4', '127.7.8.9', '127.10.11.12', '127.127.127.127', '127.0.0.1']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'bboard.apps.BboardConfig',
     'testapp.apps.TestappConfig',
+    'authapp',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'samplesite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

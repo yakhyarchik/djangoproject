@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class BurundukConfig(AppConfig):
+class AuthappConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'burunduk'
+    name = 'authapp'
